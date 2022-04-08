@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Search City</title>
+    <link href="https://cdn.jsdelivr.net/npm/h8k-design@latest/dist/index.css" rel="stylesheet"/>
+    <link href="./css/style.css" rel="stylesheet"/>
+    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/npm/h8k-design@latest/dist/assets/favicon.ico">
+    <script src="https://cdn.jsdelivr.net/npm/h8k-components/dist/h8k-components/h8k-components.esm.js"
+            type="module"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/h8k-components/dist/h8k-components/h8k-components.js"></script>
+</head>
+
+<body>
+    <!--HTML content goes here-->
+    <h8k-navbar header="Image carousel"></h8k-navbar>
+    <div class="carousel-container w-50 mx-auto mt-40">
+        
+        <div class="previous" id="previous" data-testid="previous"></div>
+        <div class="next" id="next" data-testid="next"></div>
+        <div class="indicators">
+            <ul class="indicator-list">
+                <li value="1" id="one" data-testid="one"><img src="./assets/images/img-1.jpg"/></li>
+                <li value="2" id="two" data-testid="two"><img src="./assets/images/img-2.jpg"/></li>
+                <li value="3" id="three" data-testid="three"><img src="./assets/images/img-3.jpg"/></li>
+                <li value="4" id="four" data-testid="four"><img src="./assets/images/img-4.jpg"/></li>
+                <li value="5" id="five" data-testid="five"><img src="./assets/images/img-5.jpg"/></li>
+            </ul>
+        </div>
+    </div>
+</body>
+<!-- HMR and test infrastructure - DO NOT EDIT -->
+<script>
+    /* I dont know where i should modify and  how to modify JS so i'll do it here */
+    const next = document.querySelector('.next');
+    const prev = document.querySelector('.previous');
+    const carousel = document.querySelector('.indicators');
+    const slider = document.querySelector('.indicator-list');
+    
+    next.addEventListener('click',()=> {
+        slider.style.transform = "translateX(-20%)";
+        slider.appendChild(slider.firstElementChild);
+    });
+    prev.addEventListener('click',()=>{
+        
+        slider.prepend(slider.lastElementChild);
+    })
+</script>
+</html>
